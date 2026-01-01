@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-   <h1 style="text-align: center">纳斯达克100指数</h1>
+   <h1 style="text-align: center">ndx</h1>
     <ndx/>
     <footer class="page-footer">
       <span class="footer-line"></span>
