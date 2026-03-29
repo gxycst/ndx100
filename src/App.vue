@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       typeList:[
-          'ndx','spy','n225','topix','csi300','csi500'
+          'ndx','spy','n225','topix','csi300','csi500','gold'
       ],
       type: 'ndx'
     }
