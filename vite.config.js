@@ -1,10 +1,14 @@
 import { defineConfig } from 'vite';
 import {createVuePlugin} from 'vite-plugin-vue2';
 import postcssMobileForever from "postcss-mobile-forever";
-import { resolve } from 'path';
 export default defineConfig({
     base:'ndx100',
     plugins: [createVuePlugin()],
+    server: {
+        host: '0.0.0.0',
+        port: 8080,
+        open: true,
+    },
     css:{
         postcss:{
             plugins: [

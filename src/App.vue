@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-   <h1 style="text-align: center">ndx</h1>
-    <ndx/>
+   <h1 style="text-align: center">{{ type }}</h1>
+    <el-radio-group v-model="type" fill="#000" style="margin-bottom: 24px;">
+      <el-radio-button v-for="it in typeList" :label="it">{{it}}</el-radio-button>
+    </el-radio-group>
+    <Trend/>
+    <YearPanel/>
     <footer class="page-footer">
       <span class="footer-line"></span>
       <p class="footer-text">
@@ -11,11 +15,20 @@
   </div>
 </template>
 <script>
-import ndx from './ndx/index.vue'
+import Trend from "./ndx/components/Trend.vue";
+import YearPanel from "./ndx/components/YearPanel.vue";
 
 export default {
   name: "App",
-  components: {ndx}
+  data() {
+    return {
+      typeList:[
+          'ndx','spy','n225','topix','csi300','csi500'
+      ],
+      type: 'ndx'
+    }
+  },
+  components: {YearPanel, Trend}
 }
 </script>
 <style lang="stylus">

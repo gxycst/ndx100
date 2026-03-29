@@ -125,6 +125,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/helper-module-imports@npm:7.0.0-beta.35":
+  version: 7.0.0-beta.35
+  resolution: "@babel/helper-module-imports@npm:7.0.0-beta.35"
+  dependencies:
+    "@babel/types": "npm:7.0.0-beta.35"
+    lodash: "npm:^4.2.0"
+  checksum: 10c0/2100d66acb70a8141bf6e2a9d4895ff475beb98fe64b116b6eed19e7b4ade698d89b54454ad36f155c54293fd66a0f5327f790e26abe4c2dc432d5feadfbb1c2
+  languageName: node
+  linkType: hard
+
 "@babel/helper-module-imports@npm:^7.0.0, @babel/helper-module-imports@npm:^7.25.9":
   version: 7.25.9
   resolution: "@babel/helper-module-imports@npm:7.25.9"
@@ -466,6 +476,17 @@ __metadata:
     debug: "npm:^4.3.1"
     globals: "npm:^11.1.0"
   checksum: 10c0/51dd57fa39ea34d04816806bfead04c74f37301269d24c192d1406dc6e244fea99713b3b9c5f3e926d9ef6aa9cd5c062ad4f2fc1caa9cf843d5e864484ac955e
+  languageName: node
+  linkType: hard
+
+"@babel/types@npm:7.0.0-beta.35":
+  version: 7.0.0-beta.35
+  resolution: "@babel/types@npm:7.0.0-beta.35"
+  dependencies:
+    esutils: "npm:^2.0.2"
+    lodash: "npm:^4.2.0"
+    to-fast-properties: "npm:^2.0.0"
+  checksum: 10c0/21966bb8831db8e392f3c73586e72bdb492e8d6ae22f222b47448b641b15e5a43f9e515be0b555641a99b0e5540ee29266702208b6b5fbf163e970c4e2de7cdb
   languageName: node
   linkType: hard
 
@@ -1164,10 +1185,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"async-validator@npm:~1.8.1":
+  version: 1.8.5
+  resolution: "async-validator@npm:1.8.5"
+  dependencies:
+    babel-runtime: "npm:6.x"
+  checksum: 10c0/6b909f9cccce9e631796b83a2148979016fe67dc22b13b947c3f72249a1db320a43aaa8f9ee2da362c7b2f85d04a081dfe0a2666adc3dfcab73227fd66b0aa79
+  languageName: node
+  linkType: hard
+
 "async@npm:^3.2.4":
   version: 3.2.6
   resolution: "async@npm:3.2.6"
   checksum: 10c0/36484bb15ceddf07078688d95e27076379cc2f87b10c03b6dd8a83e89475a3c8df5848859dd06a4c95af1e4c16fc973de0171a77f18ea00be899aca2a4f85e70
+  languageName: node
+  linkType: hard
+
+"babel-helper-vue-jsx-merge-props@npm:^2.0.0":
+  version: 2.0.3
+  resolution: "babel-helper-vue-jsx-merge-props@npm:2.0.3"
+  checksum: 10c0/8eaf8bf707b2a4274677ebde4b2c5139e718b1b171f07be16e0429c63a69a021a6ad5716e1e3d42c2fd002ff1d692347554329b7b9cafa5cc4c3150cc6850305
+  languageName: node
+  linkType: hard
+
+"babel-plugin-component@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "babel-plugin-component@npm:1.1.1"
+  dependencies:
+    "@babel/helper-module-imports": "npm:7.0.0-beta.35"
+  checksum: 10c0/8a32d945c7e6b891241ff06c7b21d58eb9db43653a2be79d278d38a64279fbb9aed20f7c0b00ef627240d2d718ea5f7764834bf1673da378656a5273fd737715
+  languageName: node
+  linkType: hard
+
+"babel-runtime@npm:6.x":
+  version: 6.26.0
+  resolution: "babel-runtime@npm:6.26.0"
+  dependencies:
+    core-js: "npm:^2.4.0"
+    regenerator-runtime: "npm:^0.11.0"
+  checksum: 10c0/caa752004936b1463765ed3199c52f6a55d0613b9bed108743d6f13ca532b821d4ea9decc4be1b583193164462b1e3e7eefdfa36b15c72e7daac58dd72c1772f
   languageName: node
   linkType: hard
 
@@ -1312,6 +1368,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^2.4.0":
+  version: 2.6.12
+  resolution: "core-js@npm:2.6.12"
+  checksum: 10c0/00128efe427789120a06b819adc94cc72b96955acb331cb71d09287baf9bd37bebd191d91f1ee4939c893a050307ead4faea08876f09115112612b6a05684b63
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.6":
   version: 7.0.6
   resolution: "cross-spawn@npm:7.0.6"
@@ -1336,6 +1399,15 @@ __metadata:
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
   checksum: 10c0/80c089d6f7e0c5b2bd83cf0539ab41474198579584fa10d86d0cafe0642202343cbc119e076a0b1aece191989477081415d66c9fefbf3c957fc2fc4b7009f248
+  languageName: node
+  linkType: hard
+
+"csv-parser@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "csv-parser@npm:3.2.0"
+  bin:
+    csv-parser: bin/csv-parser
+  checksum: 10c0/650769916607dae9679187803c71ef70d3b724cfb18e4adff187167b282faf18ac7c14a318c4ea6e92ae3483d3ed4b8d92ff213e77979e3049a5c0029034ac65
   languageName: node
   linkType: hard
 
@@ -1367,6 +1439,13 @@ __metadata:
     supports-color:
       optional: true
   checksum: 10c0/db94f1a182bf886f57b4755f85b3a74c39b5114b9377b7ab375dc2cfa3454f09490cc6c30f829df3fc8042bc8b8995f6567ce5cd96f3bc3688bd24027197d9de
+  languageName: node
+  linkType: hard
+
+"deepmerge@npm:^1.2.0":
+  version: 1.5.2
+  resolution: "deepmerge@npm:1.5.2"
+  checksum: 10c0/5e676957f523c73a69633d236227513310fea934af02839bd6908cf569503f8988e76512fab6d9dde700e72642f22f331455d6b12e2826e4854a8e8233d0789d
   languageName: node
   linkType: hard
 
@@ -1407,6 +1486,22 @@ __metadata:
   version: 1.5.105
   resolution: "electron-to-chromium@npm:1.5.105"
   checksum: 10c0/c5956af18fb8888938509810f754621c2c0e71e9aef305e76abb7cadef6440d9a2404eae942fea256c473e031d67d71857341786d381fbb69a734c8afba549c2
+  languageName: node
+  linkType: hard
+
+"element-ui@npm:^2.15.14":
+  version: 2.15.14
+  resolution: "element-ui@npm:2.15.14"
+  dependencies:
+    async-validator: "npm:~1.8.1"
+    babel-helper-vue-jsx-merge-props: "npm:^2.0.0"
+    deepmerge: "npm:^1.2.0"
+    normalize-wheel: "npm:^1.0.1"
+    resize-observer-polyfill: "npm:^1.5.0"
+    throttle-debounce: "npm:^1.0.1"
+  peerDependencies:
+    vue: ^2.5.17
+  checksum: 10c0/84a29272a10778aeeda9386984ef435d890546a476740f1f2a43776e060e7a353f101ec9f797113ba5ead027bbf114ac22667623285d11f89ae89920568a50aa
   languageName: node
   linkType: hard
 
@@ -1558,6 +1653,13 @@ __metadata:
   version: 2.0.2
   resolution: "estree-walker@npm:2.0.2"
   checksum: 10c0/53a6c54e2019b8c914dc395890153ffdc2322781acf4bd7d1a32d7aedc1710807bdcd866ac133903d5629ec601fbb50abe8c2e5553c7f5a0afdd9b6af6c945af
+  languageName: node
+  linkType: hard
+
+"esutils@npm:^2.0.2":
+  version: 2.0.3
+  resolution: "esutils@npm:2.0.3"
+  checksum: 10c0/9a2fe69a41bfdade834ba7c42de4723c97ec776e40656919c62cbd13607c45e127a003f05f724a1ea55e5029a4cf2de444b13009f2af71271e42d93a637137c7
   languageName: node
   linkType: hard
 
@@ -2011,6 +2113,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash@npm:^4.2.0":
+  version: 4.17.23
+  resolution: "lodash@npm:4.17.23"
+  checksum: 10c0/1264a90469f5bb95d4739c43eb6277d15b6d9e186df4ac68c3620443160fc669e2f14c11e7d8b2ccf078b81d06147c01a8ccced9aab9f9f63d50dcf8cace6bf6
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^10.2.0":
   version: 10.4.3
   resolution: "lru-cache@npm:10.4.3"
@@ -2214,7 +2323,10 @@ __metadata:
   dependencies:
     "@vitejs/plugin-vue": "npm:^5.2.1"
     "@vue/composition-api": "npm:^1.7.2"
+    babel-plugin-component: "npm:^1.1.1"
+    csv-parser: "npm:^3.2.0"
     echarts: "npm:^6.0.0"
+    element-ui: "npm:^2.15.14"
     gh-pages: "npm:^6.3.0"
     normalize.css: "npm:^8.0.1"
     postcss: "npm:^8.5.3"
@@ -2286,6 +2398,13 @@ __metadata:
   version: 3.0.0
   resolution: "normalize-path@npm:3.0.0"
   checksum: 10c0/e008c8142bcc335b5e38cf0d63cfd39d6cf2d97480af9abdbe9a439221fd4d749763bab492a8ee708ce7a194bb00c9da6d0a115018672310850489137b3da046
+  languageName: node
+  linkType: hard
+
+"normalize-wheel@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "normalize-wheel@npm:1.0.1"
+  checksum: 10c0/5daf4c97e39f36658a5263a6499bbc148676ae2bd85f12c8d03c46ffe7bc3c68d44564c00413d88d0457ac0d94450559bb1c24c2ce7ae0c107031f82d093ac06
   languageName: node
   linkType: hard
 
@@ -2497,6 +2616,20 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.11.0":
+  version: 0.11.1
+  resolution: "regenerator-runtime@npm:0.11.1"
+  checksum: 10c0/69cfa839efcf2d627fe358bf302ab8b24e5f182cb69f13e66f0612d3640d7838aad1e55662135e3ef2c1cc4322315b757626094fab13a48f9a64ab4bdeb8795b
+  languageName: node
+  linkType: hard
+
+"resize-observer-polyfill@npm:^1.5.0":
+  version: 1.5.1
+  resolution: "resize-observer-polyfill@npm:1.5.1"
+  checksum: 10c0/5e882475067f0b97dc07e0f37c3e335ac5bc3520d463f777cec7e894bb273eddbfecb857ae668e6fb6881fd6f6bb7148246967172139302da50fa12ea3a15d95
   languageName: node
   linkType: hard
 
@@ -2848,6 +2981,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"throttle-debounce@npm:^1.0.1":
+  version: 1.1.0
+  resolution: "throttle-debounce@npm:1.1.0"
+  checksum: 10c0/022018fffd03d5ea5ee32387b25b2d0bfc52e76976f820df815f236e81cfbe2e42b1d46a8e03142ef7df12c70b2ac9cf2dc5aeb74ed08119717778e4985ea87d
+  languageName: node
+  linkType: hard
+
 "tinyglobby@npm:^0.2.12":
   version: 0.2.15
   resolution: "tinyglobby@npm:0.2.15"
@@ -2855,6 +2995,13 @@ __metadata:
     fdir: "npm:^6.5.0"
     picomatch: "npm:^4.0.3"
   checksum: 10c0/869c31490d0d88eedb8305d178d4c75e7463e820df5a9b9d388291daf93e8b1eb5de1dad1c1e139767e4269fe75f3b10d5009b2cc14db96ff98986920a186844
+  languageName: node
+  linkType: hard
+
+"to-fast-properties@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "to-fast-properties@npm:2.0.0"
+  checksum: 10c0/b214d21dbfb4bce3452b6244b336806ffea9c05297148d32ebb428d5c43ce7545bdfc65a1ceb58c9ef4376a65c0cb2854d645f33961658b3e3b4f84910ddcdd7
   languageName: node
   linkType: hard
 

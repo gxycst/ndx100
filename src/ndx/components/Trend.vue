@@ -1,13 +1,18 @@
 <template>
   <div>
-    <div class="main-tit">二十五年-总体走势</div>
+    <div class="main-tit">{{yearNum}}年-总体走势</div>
     <div id="ndx100_2000_today" style="width: 100%; height: 420px;"></div>
   </div>
 </template>
 <script>
-import {ndx100} from "../data/utils.js";
+import {getYearsForm2000ToNow, ndx100} from "../data/utils.js";
 import * as echarts from "echarts"
 export default {
+  data() {
+    return {
+      yearNum: getYearsForm2000ToNow()
+    }
+  },
   mounted() {
     this.setAllYears()
   },

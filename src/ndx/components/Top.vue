@@ -1,14 +1,20 @@
 <template>
   <div>
-    <div class="main-tit">二十五年-年度涨幅</div>
+    <div class="main-tit">{{yearNum}}年-年度涨幅</div>
     <div id="myTop" style="height: 600px;width: 100%"></div>
   </div>
 </template>
 <script>
 import * as echarts from "echarts"
+import {getYearsForm2000ToNow} from "../data/utils.js";
 
 export default {
   props: ['yearRatios'],
+  data() {
+    return {
+      yearNum: getYearsForm2000ToNow()
+    }
+  },
   methods: {
     setOpt() {
       let years = this.yearRatios.map(it => it.year)

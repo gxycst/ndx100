@@ -1,7 +1,7 @@
 <template>
   <div>
     <Top :yearRatios="yearRatios"/>
-    <div class="main-tit">二十五年-月份涨跌</div>
+    <div class="main-tit">{{yearNum}}年-月份涨跌</div>
     <div class="panel-wrapper">
       <div class="year-panel" v-for="it in yearRatios">
         <div class="year-title">{{ it.year }} 年月度涨跌幅<span :class="valueClass(it.yearRatio)" class="year-ratio">
@@ -21,11 +21,12 @@
 
 </template>
 <script>
-import {ndx100} from "../data/utils.js";
+import {getYearsForm2000ToNow, ndx100} from "../data/utils.js";
 import Top from "./Top.vue"
 
 export default {
   components: {Top},
+
   methods: {
     valueClass(v) {
       if (v > 0) return 'pos';
@@ -42,15 +43,14 @@ export default {
   data() {
     return {
       yearRatios: [],
+      yearNum: getYearsForm2000ToNow()
     }
   },
   created() {
+
 // 月份中文
     // 月份中文
-    const monthNames = [
-      "一月", "二月", "三月", "四月", "五月", "六月",
-      "七月", "八月", "九月", "十月", "十一月", "十二月"
-    ];
+    const monthNames = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩', '⑪', '⑫'];
 
 // 输入: data = [{ 日期: "2000-1-3", 涨跌幅: 2.23 }, ...]
     function calcYearMonthRatio(data) {
@@ -212,6 +212,7 @@ export default {
 }
 
 .month-cell:hover {
+  cursor: pointer;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
   border-color: rgba(99, 102, 241, 0.7);
@@ -219,8 +220,12 @@ export default {
 }
 
 .month-name {
-  font-size: 13px;
-  color: #6b7280;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #d94e5d;
   margin-bottom: 4px;
 }
 

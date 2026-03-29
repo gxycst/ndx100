@@ -11,13 +11,16 @@
   },
   "devDependencies": {
     "@vue/composition-api": "^1.7.2",
+    "babel-plugin-component": "^1.1.1",
     "vite": "^6.2.0",
     "vite-plugin-vue2": "^2.0.3",
     "vue": "2"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
+    "csv-parser": "^3.2.0",
     "echarts": "^6.0.0",
+    "element-ui": "^2.15.14",
     "gh-pages": "^6.3.0",
     "normalize.css": "^8.0.1",
     "postcss": "^8.5.3",
