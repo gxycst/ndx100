@@ -1,11 +1,11 @@
 <template>
   <div id="app">
    <h1 style="text-align: center">{{ type }}</h1>
-    <el-radio-group v-model="type" fill="#000" style="margin-bottom: 24px;">
+    <el-radio-group v-model="type" fill="#000" class="fix-button" style="margin-bottom: 24px;">
       <el-radio-button v-for="it in typeList" :label="it">{{it}}</el-radio-button>
     </el-radio-group>
-    <Trend/>
-    <YearPanel/>
+    <Trend :type="type"/>
+    <YearPanel :type="type"/>
     <footer class="page-footer">
       <span class="footer-line"></span>
       <p class="footer-text">
@@ -131,5 +131,16 @@ body::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #ff1a1a, #ff6666);
 }
 
+.fix-button{
+  position: fixed;       /* 固定定位 */
+  right: 20px;           /* 距离右侧距离 */
+  z-index: 9999;         /* 保证在最上层 */
+  display: flex;
+  flex-direction: column;/* 竖着排列 */
+  transform: rotate(90deg); /* 90度旋转 */
+  transform-origin: right top; /* 旋转中心点（右上角）*/
+  margin-bottom: 0;
+  top: 500px;
 
+}
 </style>

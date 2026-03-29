@@ -1,16 +1,22 @@
 <template>
   <div>
     <div class="main-tit">{{yearNum}}年-总体走势</div>
-    <div id="ndx100_2000_today" style="width: 100%; height: 420px;"></div>
+    <div id="trendChart_Now" style="width: 100%; height: 420px;"></div>
   </div>
 </template>
 <script>
-import {getYearsForm2000ToNow, ndx100} from "../data/utils.js";
+import {getYearsForm2000ToNow, ndx100, n225, getChartDataByType} from "../data/utils.js";
 import * as echarts from "echarts"
 export default {
+  props:['type'],
   data() {
     return {
       yearNum: getYearsForm2000ToNow()
+    }
+  },
+  watch:{
+    type(){
+      this.setAllYears()
     }
   },
   mounted() {
@@ -18,8 +24,9 @@ export default {
   },
   methods: {
     setAllYears() {
-      let xDate = ndx100.map(it => it['日期'])
-      let yEnd = ndx100.map(it => it['收盘'])
+      let chartData=getChartDataByType(this.type)
+      let xDate = chartData.map(it => it['日期'])
+      let yEnd = chartData.map(it => it['收盘'])
       let option = {
         tooltip: {
           trigger: 'axis',
@@ -92,10 +99,14 @@ export default {
           axisLabel: { color: 'rgba(0,0,0,0.5)' },
           splitLine: { lineStyle: { color: 'rgba(0,0,0,0.08)' } }
         },
+        legend:{
+          show:true,
+          top:'10px'
+        },
 
         series: [
           {
-            name: 'ndx100',
+            name: this.type,
             data: yEnd,
             type: 'line',
             smooth: true,
@@ -105,7 +116,6 @@ export default {
               width: 1.6,             // 折线变细
               color: '#e60000'        // A 股常用亮红
             },
-
             symbol: 'circle',
             symbolSize: 3,
             itemStyle: {
@@ -113,20 +123,12 @@ export default {
               borderWidth: 0.8,
               borderColor: '#fff'
             },
-
-            // 区域渐变：柔和的红色
-            areaStyle: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                { offset: 0, color: 'rgba(230,0,0,0.18)' },
-                { offset: 1, color: 'rgba(230,0,0,0.02)' }
-              ])
-            }
-          }
+          },
         ]
       };
 
 
-      let myChart = echarts.init(document.getElementById('ndx100_2000_today'));
+      let myChart = echarts.init(document.getElementById('trendChart_Now'));
       myChart.setOption(option);
       window.addEventListener('resize', function () {
         myChart.resize()

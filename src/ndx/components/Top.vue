@@ -10,6 +10,12 @@ import {getYearsForm2000ToNow} from "../data/utils.js";
 
 export default {
   props: ['yearRatios'],
+  watch: {
+    yearRatios() {
+      let myChart = echarts.init(document.getElementById('myTop'));
+      myChart.setOption(this.setOpt());
+    }
+  },
   data() {
     return {
       yearNum: getYearsForm2000ToNow()
