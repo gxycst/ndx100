@@ -1,17 +1,58 @@
 <template>
   <div>
-    <div class="main-tit">{{yearNum}}年-总体走势</div>
+    <div class="main-tit">{{yearNum}}年-总体走势<el-date-picker
+        v-model="time"
+        type="daterange"
+        align="right"
+        unlink-panels
+        range-separator="至"
+        start-placeholder="开始日期"
+        end-placeholder="结束日期"
+        value-format="yyyy-MM-dd"
+        @change="changeTime"
+        clearable
+        :picker-options="pickerOptions">
+    </el-date-picker></div>
+
     <div id="trendChart_Now" style="width: 100%; height: 420px;"></div>
   </div>
 </template>
 <script>
-import {getYearsForm2000ToNow, ndx100, n225, getChartDataByType} from "../data/utils.js";
+import {getYearsForm2000ToNow, getChartDataByType} from "../data/utils.js";
 import * as echarts from "echarts"
 export default {
   props:['type'],
   data() {
     return {
-      yearNum: getYearsForm2000ToNow()
+      yearNum: getYearsForm2000ToNow(),
+      pickerOptions: {
+        shortcuts: [{
+          text: '最近一周',
+          onClick(picker) {
+            const end = new Date();
+            const start = new Date();
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+            picker.$emit('pick', [start, end]);
+          }
+        }, {
+          text: '最近一个月',
+          onClick(picker) {
+            const end = new Date();
+            const start = new Date();
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+            picker.$emit('pick', [start, end]);
+          }
+        }, {
+          text: '最近三个月',
+          onClick(picker) {
+            const end = new Date();
+            const start = new Date();
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+            picker.$emit('pick', [start, end]);
+          }
+        }]
+      },
+      time: ''
     }
   },
   watch:{
@@ -23,8 +64,26 @@ export default {
     this.setAllYears()
   },
   methods: {
+    changeTime(time) {
+      this.time = time?time:[]
+      this.setAllYears()
+    },
     setAllYears() {
-      let chartData=getChartDataByType(this.type)
+      let tempData=getChartDataByType(this.type)
+      let chartData
+      if(this.time.length){
+        const startDate = this.time[0]
+        const endDate = this.time[1]
+        chartData=tempData.filter(item => {
+          const current = new Date(item['日期'])
+          const start = new Date(startDate)
+          const end = new Date(endDate)
+          return current >= start && current <= end;
+        })
+      }else{
+        chartData=tempData
+      }
+
       let xDate = chartData.map(it => it['日期'])
       let yEnd = chartData.map(it => it['收盘'])
       let option = {

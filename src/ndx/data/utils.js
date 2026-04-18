@@ -23,16 +23,7 @@ import {Years2025 as spy_Years2025} from './spy/2025.js'
 import {Years2026 as spy_Years2026} from "./spy/2026.js";
 export const spy=[...spy_YearsFrom2000To2024,...spy_Years2025,...spy_Years2026]
 
-import {YearsFrom2000To2024 as csi500_YearsFrom2000To2024} from './csi500/2000_2024.js'
-import {Years2025 as csi500_Years2025} from './csi500/2025.js'
-import {Years2026 as csi500_Years2026} from "./csi500/2026.js";
-export const csi500=[...csi500_YearsFrom2000To2024,...csi500_Years2025,...csi500_Years2026]
 
-
-import {YearsFrom2000To2024 as csi300_YearsFrom2000To2024} from './csi300/2000_2024.js'
-import {Years2025 as csi300_Years2025} from './csi300/2025.js'
-import {Years2026 as csi300_Years2026} from "./csi300/2026.js";
-export const csi300=[...csi300_YearsFrom2000To2024,...csi300_Years2025,...csi300_Years2026]
 
 import {YearsFrom2000To2024 as gold_YearsFrom2000To2024} from './gold/2000_2024.js'
 import {Years2025 as gold_Years2025} from './gold/2025.js'
@@ -48,8 +39,6 @@ export function getChartDataByType(type){
         n225,
         topix,
         spy,
-        csi500,
-        csi300,
         gold
     }
     return maps[type]
