@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       typeList:[
-          'ndx','spy','n225','topix','gold'
+          'ndx','n225','yfd','vgt','xlk'
       ],
       type: 'ndx'
     }

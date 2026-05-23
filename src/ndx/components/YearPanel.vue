@@ -21,7 +21,7 @@
 
 </template>
 <script>
-import {getYearsForm2000ToNow, ndx100, n225, getChartDataByType} from "../data/utils.js";
+import {getYearsForm2000ToNow, getChartDataByType} from "../data/utils.js";
 import Top from "./Top.vue"
 
 export default {
